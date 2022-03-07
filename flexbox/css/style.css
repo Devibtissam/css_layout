@@ -1,0 +1,318 @@
+/* colors - see style guide for docs. 
+Clearly there is more you could place in variables, up to you if you want to use them. My answer does not go beyond colors to keep the code easier to read. */
+
+:root {
+    --color1: #001219;
+    --color2: #005f73;
+    --color3: #3d9397;
+    --color4: #94d28d;
+    --color5: #e9d8a6;
+    --color6: #ee9800;
+    --color7: #ca6702;
+    --color8: #bb3e03;
+    --color9: #ae2012;
+    --color10: #9b2226;
+}
+
+
+/* generic site styles */
+
+html {
+    box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #DBE5DE;
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+#collections{
+    margin-bottom: 4rem;
+}
+.img-collection{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    /* background-color: #94d28d; */
+    padding: 0%;
+    margin: 0%;
+}
+a{
+    text-decoration: none;
+    display: block;
+}
+figure{
+    /* background-color: #9b2226; */
+    position: relative;
+    border: 10px solid var(--color4) ;
+    max-height: 400px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 0 0.5rem 0;
+    padding: 0%;
+    border-radius: 5px;
+}
+figcaption{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    padding: 1.25rem;
+    width: 100%;
+    opacity: 0.7;
+}
+figcaption a{
+    color: var(--color1);
+    font-size: 1.25rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* hero section */
+#hero{
+    max-width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+}
+#hero img{
+    max-width: 100%;
+    max-height: 454px;
+}
+
+/* print section */
+.strip{
+    background-color: var(--color2);
+    color: white;
+    padding:1rem 0 2rem 0 ;
+    margin-top: 1rem;
+}
+
+    
+
+
+
+/* mission section */
+
+#missiom{
+    margin-bottom: 4rem;
+
+}
+.missionimg{
+    max-height:  100px ;
+    display: block;
+}
+.missiontext{
+    line-height: 1.7;
+}
+/* footer=section */
+footer{
+    background-color: var(--color5);
+    margin: 0 auto;
+    padding: 3rem;
+}
+h4{
+    font-size: 1.28rem;
+    margin-top: 0;
+}
+.social ul {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.social li{
+    margin-right: 1rem;
+}
+
+address{
+    font-style: normal;
+    margin: 1.25rem 0;
+    font-weight: bold;
+
+}
+/* header  and nav section */
+.header{
+    background-color: var(--color5);
+}
+header{
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* navigation styling */
+nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: c/enter; */
+    justify-content:  space-around;
+    align-items: space-between;
+}
+nav{
+   text-align: center;
+}
+nav li{
+    flex-basis: 48%;
+    margin-bottom: 0.5rem;
+    
+}
+nav li:first-child{
+    flex-basis: 100%;
+    /* text-align: center; */
+ 
+}
+
+nav a{
+    font-size: 1.2rem;
+    color: white;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--color10);
+    text-align: center;
+}
+nav li:first-child a{
+    background-color: transparent;
+}
+
+nav a:hover{
+    background-color: var(--color1);
+    color: var(--color5);
+ 
+}
+
+/* Initial mobile layout: a series of images stacked on top of each other with the figure caption over the image. */
+
+
+/* At this breakpoint, transition to 2 figures per line */
+
+@media (min-width: 550px) {
+ section ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+}
+section li{
+    flex-basis: 49.5%;
+
+}
+#print li:last-child figure img{
+    object-position: 0 -350px;
+}
+
+#print li:last-child{
+    flex-basis: 100%;
+}
+/* mission-section */
+.missiontext{
+    display: flow-root;
+    max-width: 900px;
+}
+
+
+.missionimg{
+    float: left;
+    max-height: 200px;
+    shape-outside: polygon(35.84% 94.87%, 34.64% 87.05%, 51.64% 4.06%, 55.1% 2.38%);
+
+}
+
+/* footer section */
+footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+}
+.social{
+    flex-basis: 47.5%;
+}
+address{
+    flex-basis: 47.5%;
+    margin: 0;
+}
+
+/* navigation bar */
+nav ul{
+    justify-content: center;
+    gap: 1.2em;
+}
+
+nav li{
+    flex-basis: auto;
+    margin-bottom: 0;
+}
+nav a{
+    color: var(--color1);
+    background-color: transparent;
+}
+
+nav a:hover{
+    color: var(--color2);
+    background-color: transparent;
+}
+
+
+}
+/* At this breakpoint, transition to 3 figures per line */
+
+@media (min-width: 800px)
+{
+      section h2 {
+        margin-left: 100px;
+    }
+   section li{
+       flex-basis: 32.5%;
+   }
+   /* footer section */
+   .social{
+       margin-left: 5%;
+   }
+  
+   #print li:last-child{
+       flex-basis: 32.5%
+   }
+   #print li:last-child figure img{
+       object-position: 0;
+   }
+
+
+/* naviation centring the logo   */
+nav ul{
+    justify-content: flex-end;
+}
+nav li:first-child{
+    flex-basis: auto;
+    margin: 0 auto;
+    order: 2;
+}
+
+nav li:nth-child(2),
+nav li:nth-child(3){
+    order: 1;
+}
+nav li:nth-child(4),
+nav li:nth-child(5){
+    order: 3;
+}
+
+
+}
